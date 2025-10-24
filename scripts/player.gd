@@ -22,7 +22,6 @@ func check_and_apply_bounce() -> void:
 			player_velocity *= 0
 
 func _physics_process(delta: float) -> void:
-	print(game_node.speed)
 	position.y += player_velocity.y * delta
 	check_and_apply_bounce()
 	player_velocity.y += GRAVITY * delta

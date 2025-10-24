@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://drbemtmre6y8d"]
 
-[ext_resource type="Script" uid="uid://dn1y88dhccu03" path="res://scripts/endless_runner_scene.gd" id="1_xntsv"]
+[ext_resource type="Script" uid="uid://dn1y88dhccu03" path="res://scripts/endless_runner_scene.gd" id="1_111wc"]
 [ext_resource type="Texture2D" uid="uid://bfm07vihmgqly" path="res://assets/sprites/world_tileset.png" id="2_1c28e"]
 [ext_resource type="PackedScene" uid="uid://dfnvem0efuepl" path="res://scenes/player.tscn" id="3_1c28e"]
 [ext_resource type="Script" uid="uid://b06egvnu6tef3" path="res://scripts/player.gd" id="4_111wc"]
@@ -137,7 +137,7 @@ sources/0 = SubResource("TileSetAtlasSource_gsbci")
 distance = -176.0
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_xntsv")
+script = ExtResource("1_111wc")
 
 [node name="Floor" type="TileMapLayer" parent="."]
 position = Vector2(47, 1)
