@@ -1,15 +1,20 @@
 extends Node2D
 
-@export var speed : float = .3
+const GROUND_PIXEL_WIDTH := 2304
+const GROUND_RESET_POSITION = 0
 
-@onready var tile_map_layer: TileMapLayer = $Floor
+@export var speed : float = 0.0
+
+@onready var ground := $Ground
+
+var screen_size : Vector2i
+
+func _ready() -> void:
+	screen_size = get_window().size
+	print(screen_size)
+	print(ground.position)
 
 func _process(delta: float) -> void:
-	tile_map_layer.position.x -= speed
-	
-	if tile_map_layer.position.x < -270:
-		tile_map_layer.position.x = 0
-		_change_tile_map()
-		
-func _change_tile_map():
-	pass
+	ground.position.x -= speed * delta
+	if ground.position.x < GROUND_RESET_POSITION:
+		ground.position.x = GROUND_PIXEL_WIDTH/2
