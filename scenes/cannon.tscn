@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://buar36ap7lcyg"]
+
+[ext_resource type="Texture2D" uid="uid://comykhx30d0ku" path="res://assets/sprites/cannons/cannon_1/cannon_1_shaft.png" id="1_23j6s"]
+[ext_resource type="Texture2D" uid="uid://d16mgff4e7j7x" path="res://assets/sprites/cannons/cannon_1/cannon_1_wheel.png" id="2_72ky0"]
+
+[node name="Cannon" type="Node2D"]
+rotation = -0.008726646
+
+[node name="cannon_shaft" type="Sprite2D" parent="."]
+position = Vector2(22, -8)
+texture = ExtResource("1_23j6s")
+offset = Vector2(14.379904, 0.12773323)
+
+[node name="cannon_wheel" type="Sprite2D" parent="."]
+position = Vector2(35, -9)
+texture = ExtResource("2_72ky0")
