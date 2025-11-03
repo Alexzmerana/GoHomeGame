@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ct6sm6mwoxutk"]
+[gd_scene load_steps=0 format=3 uid="uid://ct6sm6mwoxutk"]
 
 [node name="Restart" type="CanvasLayer"]
 

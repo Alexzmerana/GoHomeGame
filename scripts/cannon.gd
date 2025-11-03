@@ -29,10 +29,9 @@ var cannon_angle := 0.0:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cannon_angle = -PI/4
-	print(cannon_shaft.position)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if game_node.launched == false:
+	if game_node.pre_launch:
 		cannon_angle = cannon_shaft.position.angle_to_point(get_global_mouse_position())
 	
