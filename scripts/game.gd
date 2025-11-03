@@ -32,8 +32,7 @@ var screen_size : Vector2i
 func _ready() -> void:
 	launched = false
 	screen_size = get_window().size
-	print(ground.position)
-	print(player.position)
+	print(screen_size)
 	
 	
 func new_launch() -> void:
@@ -45,7 +44,8 @@ func new_launch() -> void:
 
 
 func _process(delta: float) -> void:
-	print(player.position)
+	print(screen_size)
+	
 	ground.position.x -= speed * delta
 	cannon.position.x -= speed * delta
 	if ground.position.x < GROUND_RESET_POSITION_THRESHHOLD:
@@ -56,3 +56,5 @@ func _process(delta: float) -> void:
 	var zoom_amount := remap(speed, 0.0, MAX_SPEED, 0.0, 1.0)
 	var target_zoom := MAX_ZOOM.lerp(MIN_ZOOM, zoom_amount)
 	camera.zoom = camera.zoom.lerp(target_zoom, delta * 5.0)
+	if speed == 0.0:
+		new_launch()

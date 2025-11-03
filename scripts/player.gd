@@ -25,6 +25,7 @@ func check_and_apply_bounce() -> void:
 		player_velocity *= friction_scalar 
 		if player_velocity.x <= MIN_SPEED:
 			player_velocity *= 0
+			game_node.launched = false
 
 func get_launch_angle() -> Vector2:
 	var direction_vector = Vector2(cos(cannon_shaft.rotation), sin(cannon_shaft.rotation)).normalized()
