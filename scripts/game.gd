@@ -4,7 +4,7 @@ extends Node2D
 @onready var player := $Player
 @onready var camera := $Camera2D
 @onready var cannon := $Cannon
-@onready var restart_screen := $Camera2D/RestartScreen
+@onready var restart_screen := $RestartScreen
 @onready var distance_label := $HUD/DistanceLabel
 
 const GROUND_PIXEL_WIDTH := 2304

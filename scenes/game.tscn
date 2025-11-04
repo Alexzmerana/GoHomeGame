@@ -28,7 +28,7 @@ script = ExtResource("4_u5sy4")
 position = Vector2(232, -112)
 zoom = Vector2(2.5, 2.5)
 
-[node name="RestartScreen" parent="Camera2D" instance=ExtResource("2_u5sy4")]
-visible = false
-
 [node name="HUD" parent="." instance=ExtResource("8_gee14")]
+
+[node name="RestartScreen" parent="." instance=ExtResource("2_u5sy4")]
+visible = false
