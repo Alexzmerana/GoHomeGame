@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxkcqodivqruf"]
+[gd_scene load_steps=2 format=3 uid="uid://bjiv8yrnnngby"]
 
 [ext_resource type="Script" uid="uid://njxc1yiv11au" path="res://scripts/restart_screen.gd" id="1_7n4ce"]
 
@@ -6,8 +6,17 @@
 script = ExtResource("1_7n4ce")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.75
+offset_top = -117.5
+offset_right = 180.75
+offset_bottom = 117.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -19,7 +28,11 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 text = "GRAPH"
 horizontal_alignment = 1
@@ -30,11 +43,11 @@ columns = 2
 
 [node name="FinalDistanceLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
-text = "Disantance"
+text = "Disantance:"
 
 [node name="IncomeEarnedLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
-text = "Income"
+text = "Income:"
 
 [node name="Restart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2

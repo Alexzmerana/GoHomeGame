@@ -5,7 +5,7 @@ extends Node2D
 @onready var game_node = $".."
 # Cannon angles in radians
 const MAX_CANNON_ANGLE := 0
-const MIN_CANNON_ANGLE := -PI/2 
+const MIN_CANNON_ANGLE := -PI/2 + PI/8
 
 @export var cannon_length := 87.0:
 	set(new_val):

@@ -52,6 +52,16 @@ func new_launch() -> void:
 	distance_label.text = "Distance: 0"
 	distance_travelled = 0.0
 
+func post_launch_actions() -> void:
+	restart_screen.visible = true
+	var income = int(distance_travelled * distance_income_scalar)
+	if not income_added:
+		income_added = true
+		player.account_balance += income
+	var post_launch_distance = $RestartScreen/PanelContainer/MarginContainer/VBoxContainer/GridContainer/FinalDistanceLabel
+	var post_launch_income = $RestartScreen/PanelContainer/MarginContainer/VBoxContainer/GridContainer/IncomeEarnedLabel
+	post_launch_distance.text = "Distance: " + str(int(distance_travelled))
+	post_launch_income.text = "Income: " + str(income)
 
 func _process(delta: float) -> void:
 	
@@ -69,9 +79,5 @@ func _process(delta: float) -> void:
 		#camera.zoom = camera.zoom.lerp(target_zoom, delta * 5.0)
 		
 	# Post launch actions
-	if post_launch:
-		restart_screen.visible = true
-		if not income_added:
-			income_added = true
-			player.account_balance += int(distance_travelled * distance_income_scalar)
-		print(player.account_balance)
+	if post_launch and not income_added:
+		post_launch_actions()

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://1qvtybxqip7e"]
+
+[node name="ShopMenu" type="CanvasLayer"]
+
+[node name="TabBar" type="TabBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="TabBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="TabBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label3" type="Label" parent="TabBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
