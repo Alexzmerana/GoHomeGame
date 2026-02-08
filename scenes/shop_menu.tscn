@@ -1,22 +1,44 @@
-[gd_scene load_steps=0 format=3 uid="uid://1qvtybxqip7e"]
+[gd_scene load_steps=2 format=3 uid="uid://1qvtybxqip7e"]
+
+[ext_resource type="Script" uid="uid://d2qcd5wvppb1b" path="res://scripts/shop_menu.gd" id="1_uj65v"]
 
 [node name="ShopMenu" type="CanvasLayer"]
+script = ExtResource("1_uj65v")
 
-[node name="TabBar" type="TabBar" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="TabBar"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
-[node name="Label2" type="Label" parent="TabBar"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
 
-[node name="Label3" type="Label" parent="TabBar"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Cannon Power"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Buy"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "Friction "
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "250 Buy"
