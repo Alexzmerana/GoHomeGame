@@ -6,6 +6,7 @@ extends Node2D
 @onready var cannon := $Cannon
 @onready var restart_screen := $RestartScreen
 @onready var distance_label := $HUD/DistanceLabel
+@onready var shop_menu := $ShopMenu
 
 const GROUND_PIXEL_WIDTH := 2304
 
@@ -45,6 +46,7 @@ func new_launch() -> void:
 	player.visible = false
 	income_added = false
 	restart_screen.visible = false
+	shop_menu.visible = false
 	ground.position = GROUND_START_POSITION
 	cannon.position = CANNON_START_POSITION
 	player.position = PLAYER_START_POITION

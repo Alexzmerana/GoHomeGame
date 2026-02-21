@@ -31,7 +31,7 @@ func _ready() -> void:
 	cannon_angle = -PI/4
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if game_node.pre_launch:
 		cannon_angle = cannon_shaft.position.angle_to_point(get_global_mouse_position())
 	

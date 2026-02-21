@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-@onready var parent_label := $PanelContainer/MarginContainer/VBoxContainer
-
+@onready var parent_label := $VBoxContainer/UpgradePanelContainer/MarginContainer/VBoxContainer
+@onready var game := $".."
 var shop_hash := {
 	"upgrades" : [
 		{"name" : "Cannon Power v1", "cost" : 500},
@@ -33,3 +33,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_continue_pressed() -> void:
+	game.new_launch()

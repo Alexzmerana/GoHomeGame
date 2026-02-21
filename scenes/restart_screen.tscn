@@ -62,3 +62,4 @@ size_flags_vertical = 3
 text = "Shop"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/Shop" to="." method="_on_shop_pressed"]

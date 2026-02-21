@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://drbemtmre6y8d"]
+[gd_scene load_steps=10 format=3 uid="uid://drbemtmre6y8d"]
 
 [ext_resource type="Script" uid="uid://dn1y88dhccu03" path="res://scripts/game.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://yu776b2o4cux" path="res://scenes/ground.tscn" id="2_iywne"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://cdqfhbvc6cko6" path="res://scripts/cannon.gd" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://dvl054gc1e5bs" path="res://scenes/hud.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://1qvtybxqip7e" path="res://scenes/shop_menu.tscn" id="9_0tnpc"]
-[ext_resource type="Script" uid="uid://bkdwvahcugl7w" path="res://scripts/state_machine.gd" id="10_vtaks"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lbhrr")
@@ -33,9 +32,5 @@ zoom = Vector2(2.5, 2.5)
 [node name="HUD" parent="." instance=ExtResource("8_gee14")]
 
 [node name="RestartScreen" parent="." instance=ExtResource("2_u5sy4")]
-visible = false
 
 [node name="ShopMenu" parent="." instance=ExtResource("9_0tnpc")]
-
-[node name="StateMachine" type="Node" parent="."]
-script = ExtResource("10_vtaks")
