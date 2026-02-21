@@ -8,9 +8,11 @@ rotation = -0.008726646
 
 [node name="cannon_shaft" type="Sprite2D" parent="."]
 position = Vector2(22, -8)
+scale = Vector2(5, 5)
 texture = ExtResource("1_23j6s")
 offset = Vector2(14.379904, 0.12773323)
 
 [node name="cannon_wheel" type="Sprite2D" parent="."]
 position = Vector2(35, -9)
+scale = Vector2(5.5, 5.5)
 texture = ExtResource("2_72ky0")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfnvem0efuepl"]
+[gd_scene load_steps=9 format=3 uid="uid://dfnvem0efuepl"]
 
 [ext_resource type="Texture2D" uid="uid://1rn1qqk2k2yo" path="res://assets/sprites/knight.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dro08ui0gfrxj" path="res://scenes/player.gd" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
@@ -38,21 +39,20 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
-radius = 5.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 16.0
+height = 64.0
 
-[node name="Player" type="Node2D"]
-rotation = 1.5707964
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
 
-[node name="Node2D" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(0, -3)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.28704113
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
-position = Vector2(5.2453663e-07, 3)
-shape = SubResource("CircleShape2D_1jxqw")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+shape = SubResource("CapsuleShape2D_g2els")
