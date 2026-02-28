@@ -7,23 +7,32 @@ const SCREEN_SIZE : Vector2i = Vector2i(1920, 1080)
 
 enum GameState { PRE_LAUNCH, IN_AIR, RECAP, SHOP}
 @onready var current_state : GameState
+@onready var player := $Player
+@onready var camera := $Camera2D
+@onready var ground := $Ground
 
-var player_speed := 0
 
 func ready():
 	new_launch()
 
 func new_launch():
 	current_state = GameState.PRE_LAUNCH
-	$Camera2D.position = CAMERA_START_POS
-	$Player.position = PLAYER_START_POS
-	$Player.visible = false
-	$Ground.position = GROUND_START_POS
+	camera.position = CAMERA_START_POS
+	player.position = PLAYER_START_POS
+	player.visible = false
+	ground.position = GROUND_START_POS
 
 	
 func _process(delta: float) -> void:
-	$Player.position.x += player_speed * delta
-	$Camera2D.position.x += player_speed * delta
+	camera.position.x += player.velocity.x * delta
 	
-	if ($Camera2D.position.x - $Ground.position.x) >= SCREEN_SIZE.x * 1.5:
-		$Ground.position.x += SCREEN_SIZE.x
+	if (camera.position.x - ground.position.x) >= SCREEN_SIZE.x * 1.5:
+		ground.position.x += SCREEN_SIZE.x
+
+
+func _on_player_in_air_signal() -> void:
+	current_state = GameState.IN_AIR
+
+
+func _on_player_stopped_moving() -> void:
+	current_state = GameState.SHOP # Replace with function body.

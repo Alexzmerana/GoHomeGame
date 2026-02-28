@@ -8,7 +8,7 @@ const MAX_CANNON_ANGLE := 0
 const MIN_CANNON_ANGLE := -PI/2 + PI/8
 
 
-var launch_power := 100.0:
+var launch_power := 1000.0:
 	set(new_val):
 		launch_power = 100.0
 	get:

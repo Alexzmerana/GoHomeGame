@@ -29,10 +29,12 @@ rotation = 1.5707964
 position = Vector2(112, 951.99994)
 
 [node name="HUD" parent="." instance=ExtResource("8_gee14")]
-visible = false
 
 [node name="RestartScreen" parent="." instance=ExtResource("2_u5sy4")]
 visible = false
 
 [node name="ShopMenu" parent="." instance=ExtResource("9_0tnpc")]
 visible = false
+
+[connection signal="in_air_signal" from="Player" to="." method="_on_player_in_air_signal"]
+[connection signal="stopped_moving" from="Player" to="." method="_on_player_stopped_moving"]
