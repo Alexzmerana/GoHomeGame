@@ -23,9 +23,9 @@ ignore_rotation = false
 
 [node name="Player" parent="." instance=ExtResource("3_p57ef")]
 position = Vector2(256, 934)
+rotation = 1.5707964
 
 [node name="Cannon" parent="." instance=ExtResource("5_iywne")]
-visible = false
 position = Vector2(112, 951.99994)
 
 [node name="HUD" parent="." instance=ExtResource("8_gee14")]

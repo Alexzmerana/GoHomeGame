@@ -2,22 +2,21 @@ extends Node2D
 
 
 @onready var cannon_shaft = $cannon_shaft
-@onready var game_node = $".."
+@onready var main_node = $".."
 # Cannon angles in radians
 const MAX_CANNON_ANGLE := 0
 const MIN_CANNON_ANGLE := -PI/2 + PI/8
 
-@export var cannon_length := 87.0:
-	set(new_val):
-		cannon_length = 87.0
-	get:
-		return cannon_length
 
-@export var launch_power := 100.0:
+var launch_power := 100.0:
 	set(new_val):
 		launch_power = 100.0
 	get:
 		return launch_power
+
+@export var launch_velocity : Vector2:
+	get:
+		return launch_power * Vector2(cos(cannon_angle), sin(cannon_angle))
 
 var cannon_angle := 0.0:
 	set(new_angle):
@@ -32,6 +31,5 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if game_node.pre_launch:
-		cannon_angle = cannon_shaft.position.angle_to_point(get_global_mouse_position())
-	
+	#If in pre_launch game state
+	if(main_node.current_state == 0): cannon_angle = position.angle_to_point(get_global_mouse_position())
