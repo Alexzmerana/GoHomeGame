@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://dvl054gc1e5bs"]
+[gd_scene load_steps=2 format=3 uid="uid://dvl054gc1e5bs"]
+
+[ext_resource type="Script" uid="uid://skb2xf4i1j8v" path="res://scripts/hud.gd" id="1_ahhtf"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ahhtf")
 
 [node name="DistanceLabel" type="Label" parent="."]
 anchors_preset = 1

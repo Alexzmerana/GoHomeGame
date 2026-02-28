@@ -10,7 +10,7 @@ enum GameState { PRE_LAUNCH, IN_AIR, RECAP, SHOP}
 @onready var player := $Player
 @onready var camera := $Camera2D
 @onready var ground := $Ground
-
+@onready var hud := $HUD
 
 func ready():
 	new_launch()

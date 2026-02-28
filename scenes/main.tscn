@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drbemtmre6y8d"]
+[gd_scene load_steps=11 format=3 uid="uid://drbemtmre6y8d"]
 
 [ext_resource type="Script" uid="uid://dn1y88dhccu03" path="res://scripts/main.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://yu776b2o4cux" path="res://scenes/ground.tscn" id="2_iywne"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://buar36ap7lcyg" path="res://scenes/cannon.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://dvl054gc1e5bs" path="res://scenes/hud.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://1qvtybxqip7e" path="res://scenes/shop_menu.tscn" id="9_0tnpc"]
+[ext_resource type="Script" uid="uid://lcu4ismgth50" path="res://scripts/ui_controller.gd" id="9_85g3d"]
+[ext_resource type="Script" uid="uid://dcm2jkyiwc4id" path="res://scripts/States/HUDState.gd" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://cegfkyatrhpb5" path="res://scenes/parallax_background.tscn" id="10_vtaks"]
 
 [node name="Main" type="Node2D"]
@@ -35,6 +37,15 @@ visible = false
 
 [node name="ShopMenu" parent="." instance=ExtResource("9_0tnpc")]
 visible = false
+
+[node name="UIStateMachine" type="Node" parent="."]
+script = ExtResource("9_85g3d")
+
+[node name="HUDState" type="Node" parent="UIStateMachine" node_paths=PackedStringArray("hud_element", "player")]
+script = ExtResource("10_choun")
+hud_element = NodePath("../../HUD")
+player = NodePath("../../Player")
+metadata/_custom_type_script = "uid://dcm2jkyiwc4id"
 
 [connection signal="in_air_signal" from="Player" to="." method="_on_player_in_air_signal"]
 [connection signal="stopped_moving" from="Player" to="." method="_on_player_stopped_moving"]
