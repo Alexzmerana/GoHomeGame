@@ -2,6 +2,9 @@ extends CanvasLayer
 
 @onready var parent_label := $VBoxContainer/UpgradePanelContainer/MarginContainer/VBoxContainer
 @onready var game := $".."
+
+signal continue_pressed
+
 var shop_hash := {
 	"upgrades" : [
 		{"name" : "Cannon Power v1", "cost" : 500},
@@ -9,6 +12,7 @@ var shop_hash := {
 		{"name" : "Cannon Power v3", "cost" : 1500}
 	]
 }
+
 func create_entry(dict: Dictionary):
 	var container = HBoxContainer.new()
 	var name_label = Label.new()
@@ -36,4 +40,4 @@ func _process(delta: float) -> void:
 
 
 func _on_continue_pressed() -> void:
-	game.new_launch()
+	continue_pressed.emit()
